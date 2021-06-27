@@ -16,9 +16,19 @@ SLOT="0"
 KEYWORDS=""
 REQUIRED_USE="${PYiTHON_REQUIRED_USE}"
 
-DEPEND=""
+DEPEND="
+	dev-cpp/antlr-cpp
+	dev-java/antlr:4
+	dev-python/flake8
+	dev-python/pytest
+	dev-python/textx
+"
 RDEPEND="
 	${PYTHON_DEPS}
 	${DEPEND}
 "
 BDEPEND=""
+
+python_compile() {
+	distutils-r1_python_compile --antlr-runtime=shared
+}
