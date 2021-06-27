@@ -1,0 +1,72 @@
+From 3766832b4370587f53798b8aba79f7a55a685339 Mon Sep 17 00:00:00 2001
+From: "S.J.R. van Schaik" <stephan@synkhronix.com>
+Date: Sat, 26 Jun 2021 05:47:27 -0400
+Subject: [PATCH] fix capnproto
+
+---
+ libs/EXTERNAL/CMakeLists.txt        | 30 -----------------------------
+ libs/libvtrcapnproto/CMakeLists.txt |  4 ++--
+ 2 files changed, 2 insertions(+), 32 deletions(-)
+
+diff --git a/libs/EXTERNAL/CMakeLists.txt b/libs/EXTERNAL/CMakeLists.txt
+index 38a14d76e..a2118ef2f 100644
+--- a/libs/EXTERNAL/CMakeLists.txt
++++ b/libs/EXTERNAL/CMakeLists.txt
+@@ -13,33 +13,3 @@ add_subdirectory(libtatum)
+ if(VPR_USE_EZGL STREQUAL "on")
+     add_subdirectory(libezgl)
+ endif()
+-
+-if(${VTR_ENABLE_CAPNPROTO})
+-    # Override default policy for capnproto (CMake policy version 3.1)
+-    # Enable new IPO variables
+-    set(CMAKE_POLICY_DEFAULT_CMP0069 NEW)
+-
+-    # Enable option overrides via variables
+-    set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+-
+-    # Re-enable CXX extensions for capnproto.
+-    set(CMAKE_CXX_EXTENSIONS ON)
+-
+-    # Disable capnproto tests
+-    set(BUILD_TESTING OFF)
+-
+-    #Since capnproto is an externally developed library/tool, we suppress all compiler warnings
+-    CHECK_CXX_COMPILER_FLAG("-w" CXX_COMPILER_SUPPORTS_-w)
+-    if(CXX_COMPILER_SUPPORTS_-w)
+-        add_compile_options("-w")
+-    endif()
+-
+-    add_subdirectory(capnproto EXCLUDE_FROM_ALL)
+-
+-    #Some capnproto kj headers (e.g. filesystem.h) generate warnings, treat them as system headers to suppress warnings
+-    #We suppress them here since we include the capnproto sub-tree as is and do not modify its CMakeLists.txts
+-    target_include_directories(kj SYSTEM INTERFACE
+-      $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/capnproto/c++/src>
+-      $<INSTALL_INTERFACE:include>
+-    )
+-endif()
+diff --git a/libs/libvtrcapnproto/CMakeLists.txt b/libs/libvtrcapnproto/CMakeLists.txt
+index 8067ab14c..97b536764 100644
+--- a/libs/libvtrcapnproto/CMakeLists.txt
++++ b/libs/libvtrcapnproto/CMakeLists.txt
+@@ -14,6 +14,8 @@ if(NOT MSCV)
+     endforeach()
+ endif()
+ 
++find_package(CapnProto)
++
+ # Create generated headers from capnp schema files
+ #
+ # Each schema used should appear here.
+@@ -28,8 +30,6 @@ capnp_generate_cpp(CAPNP_SRCS CAPNP_HDRS
+     ${CAPNP_DEFS}
+     )
+ 
+-install(FILES ${CAPNP_DEFS} DESTINATION capnp)
+-
+ add_library(libvtrcapnproto STATIC
+             ${CAPNP_SRCS}
+             mmap_file.h
+-- 
+2.31.1
