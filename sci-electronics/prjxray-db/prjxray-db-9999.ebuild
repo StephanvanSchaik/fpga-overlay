@@ -21,10 +21,14 @@ src_configure() {
 }
 
 src_compile() {
-	return
+	(
+		echo "#!/bin/sh"
+		echo "echo \"/usr/share/prjxray-db\""
+	) >prjxray-config
 }
 
 src_install() {
+	dobin prjxray-config
 	insinto /usr/share/prjxray-db
 	doins -r artix7
 	doins -r kintex7
