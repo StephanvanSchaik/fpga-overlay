@@ -12,12 +12,15 @@ EGIT_REPO_URI="https://github.com/YosysHQ/yosys"
 
 SLOT="0"
 KEYWORDS=""
-IUSE="+abc plugins readline tcl"
+IUSE="+abc plugins protobuf +python readline tcl +zlib"
 
 RDEPEND="
 	readline? ( sys-libs/readline )
+	python? ( dev-lang/python dev-libs/boost )
 	plugins? ( virtual/libffi virtual/pkgconfig )
-	tcl? ( dev-lang/tcl )"
+	protobuf? ( dev-libs/protobuf )
+	tcl? ( dev-lang/tcl )
+	zlib? ( sys-libs/zlib )"
 
 DEPEND="
 	sys-devel/bison
@@ -35,7 +38,16 @@ src_configure() {
 		echo "ENABLE_TCL := `usex tcl 1 0`"
 		echo "ENABLE_PLUGINS := `usex plugins 1 0`"
 		echo "ENABLE_READLINE := `usex readline 1 0`"
+		echo "ENABLE_GLOB := 1"
+		echo "ENABLE_LIBYOSYS := 1"
+		echo "ENABLE_PYOSYS := `usex python 1 0`"
+		echo "ENABLE_PROTOBUF := `usex protobuf 1 0`"
+		echo "ENABLE_ZLIB := `usex zlib 1 0`"
 	) >Makefile.conf
+}
+
+src_compile() {
+	emake PREFIX="/usr"
 }
 
 src_install() {
