@@ -13,13 +13,14 @@ SRC_URI="
 	xc7a100t? ( https://storage.googleapis.com/symbiflow-arch-defs/artifacts/prod/foss-fpga-tools/symbiflow-arch-defs/continuous/install/201/20210325-000253/symbiflow-arch-defs-xc7a100t_test-1c7a3d1e.tar.xz )
 	xc7a200t? ( https://storage.googleapis.com/symbiflow-arch-defs/artifacts/prod/foss-fpga-tools/symbiflow-arch-defs/continuous/install/201/20210325-000253/symbiflow-arch-defs-xc7a200t_test-1c7a3d1e.tar.xz )
 	xc7z010? ( https://storage.googleapis.com/symbiflow-arch-defs/artifacts/prod/foss-fpga-tools/symbiflow-arch-defs/continuous/install/201/20210325-000253/symbiflow-arch-defs-xc7z010_test-1c7a3d1e.tar.xz )
+	xc7z020? ( https://storage.googleapis.com/symbiflow-arch-defs/artifacts/prod/foss-fpga-tools/symbiflow-arch-defs/continuous/install/200/20210324-020513/symbiflow-arch-defs-xc7z020_test-1c7a3d1e.tar.xz )
 "
 S=$WORKDIR
 
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+xc7a50t +xc7a100t +xc7a200t +xc7z010"
+IUSE="+xc7a50t +xc7a100t +xc7a200t +xc7z010 +xc7z020"
 
 DEPEND="
 	dev-embedded/openocd
@@ -65,8 +66,8 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-CHECKREQS_DISK_BUILD="20G"
-CHECKREQS_DISK_USR="20G"
+CHECKREQS_DISK_BUILD="24G"
+CHECKREQS_DISK_USR="24G"
 
 src_prepare() {
 	eapply_user
