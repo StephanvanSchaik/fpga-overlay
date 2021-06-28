@@ -8,7 +8,7 @@ inherit multilib eutils git-r3
 DESCRIPTION="A framework for RTL synthesis"
 HOMEPAGE="http://www.clifford.at/yosys/"
 LICENSE="ISC"
-EGIT_REPO_URI="https://github.com/YosysHQ/yosys"
+EGIT_REPO_URI="https://github.com/SymbiFlow/yosys"
 
 SLOT="0"
 KEYWORDS=""
