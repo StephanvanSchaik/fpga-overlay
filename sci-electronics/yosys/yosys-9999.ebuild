@@ -10,7 +10,7 @@ inherit git-r3 python-r1
 DESCRIPTION="A framework for RTL synthesis"
 HOMEPAGE="http://www.clifford.at/yosys/"
 LICENSE="ISC"
-EGIT_REPO_URI="https://github.com/SymbiFlow/yosys"
+EGIT_REPO_URI="https://github.com/YosysHQ/yosys"
 
 SLOT="0"
 KEYWORDS=""
