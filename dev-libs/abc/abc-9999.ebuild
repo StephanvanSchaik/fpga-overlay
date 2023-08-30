@@ -21,6 +21,7 @@ IUSE="+static"
 
 src_compile() {
 	emake ABC_USE_PIC=1 libabc.so
+	emake
 
 	if use static ; then
 		emake libabc.a
@@ -29,6 +30,7 @@ src_compile() {
 
 src_install() {
 	dolib.so libabc.so
+	doexe abc
 
 	if use static ; then
 		dolib.a libabc.a
