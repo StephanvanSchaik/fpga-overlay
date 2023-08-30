@@ -30,7 +30,7 @@ src_compile() {
 
 src_install() {
 	dolib.so libabc.so
-	doexe abc
+	dobin abc
 
 	if use static ; then
 		dolib.a libabc.a
