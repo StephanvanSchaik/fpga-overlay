@@ -16,7 +16,10 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS=""
 
-RDEPEND=""
+RDEPEND="
+	dev-python/jinja
+	>=dev-python/pyvcd-0.2.2
+"
 BDEPEND=""
 
 distutils_enable_tests pytest
