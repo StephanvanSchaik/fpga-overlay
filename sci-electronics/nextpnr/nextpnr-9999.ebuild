@@ -1,9 +1,9 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit eutils git-r3 multilib cmake-utils
+inherit git-r3 cmake
 
 DESCRIPTION="nextptr - portable FPGA place and route tool"
 HOMEPAGE="https://github.com/YosysHQ/nextpnr"
@@ -25,5 +25,5 @@ src_configure() {
 		"-DARCH=$(usex ice40 "ice40;" "")$(usex ecp5 "ecp5;" "")"
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }

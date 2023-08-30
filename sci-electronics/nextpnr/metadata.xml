@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+<email>stephan@synkhronix.com</email>
+<name>S.J.R. van Schaik</name>
+</maintainer>
+<use>
+	<flag name='ecp5'>Enable support for the Lattice ECP5 family of FPGAs.</flag>
+	<flag name='ice40'>Enable support for the Lattice ICE40 family of FPGAs.</flag>
+</use>
+</pkgmetadata>
