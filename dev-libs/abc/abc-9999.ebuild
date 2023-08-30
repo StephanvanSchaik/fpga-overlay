@@ -20,9 +20,9 @@ BDEPEND=""
 IUSE="+static"
 
 src_compile() {
+	emake ABC_USE_PIC=1 libabc.so
+
 	if use static ; then
 		emake libabc.a
 	fi
-
-	emake ABC_USE_PIC=1 libabc.so
 }
