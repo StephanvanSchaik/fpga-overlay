@@ -1,0 +1,29 @@
+diff --git a/Makefile b/Makefile
+index 4f7f94cf1..a4b6f3fbb 100644
+--- a/Makefile
++++ b/Makefile
+@@ -166,7 +166,7 @@ bumpversion:
+ # will remove the 'abc' directory and you do not want to accidentally
+ # delete your work on ABC..
+ ABCREV = bb64142
+-ABCPULL = 1
++ABCPULL = 0
+ ABCURL ?= https://github.com/YosysHQ/abc
+ ABCMKARGS = CC="$(CXX)" CXX="$(CXX)" ABC_USE_LIBSTDCXX=1 ABC_USE_NAMESPACE=abc VERBOSE=$(Q)
+ 
+@@ -822,11 +822,11 @@ ifeq ($(ABCREV),default)
+ .PHONY: abc/libabc-$(ABCREV).a
+ endif
+ 
+-$(PROGRAM_PREFIX)yosys-abc$(EXE): abc/abc-$(ABCREV)$(EXE)
+-	$(P) cp abc/abc-$(ABCREV)$(EXE) $(PROGRAM_PREFIX)yosys-abc$(EXE)
++$(PROGRAM_PREFIX)yosys-abc$(EXE): /usr/bin/abc$(EXE)
++	$(P) cp /usr/bin/abc$(EXE) $(PROGRAM_PREFIX)yosys-abc$(EXE)
+ 
+-$(PROGRAM_PREFIX)yosys-libabc.a: abc/libabc-$(ABCREV).a
+-	$(P) cp abc/libabc-$(ABCREV).a $(PROGRAM_PREFIX)yosys-libabc.a
++$(PROGRAM_PREFIX)yosys-libabc.a: /usr/lib64/abc$(EXE)
++	$(P) cp /usr/lib64/libabc.a $(PROGRAM_PREFIX)yosys-libabc.a
+ 
+ ifneq ($(SEED),)
+ SEEDOPT="-S $(SEED)"

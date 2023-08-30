@@ -34,6 +34,10 @@ DEPEND="
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
+PATCHES=(
+	"${FILESDIR}/${P}-makefile.patch"
+)
+
 src_configure() {
 	if use clang ; then
 		emake config-clang
