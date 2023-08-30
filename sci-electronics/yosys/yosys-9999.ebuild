@@ -15,7 +15,7 @@ EGIT_REPO_URI="https://github.com/SymbiFlow/yosys"
 SLOT="0"
 KEYWORDS=""
 USE="abc"
-IUSE="+abc plugins +python readline tcl +zlib"
+IUSE="+abc clang plugins +python readline tcl +zlib"
 
 RDEPEND="
 	readline? ( sys-libs/readline )
@@ -35,6 +35,12 @@ DEPEND="
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 src_configure() {
+	if use clang ; then
+		emake config-clang
+	else
+		emake config-gcc
+	fi
+
 	(
 		echo "ENABLE_ABC := `usex abc 1 0`"
 		echo "ENABLE_TCL := `usex tcl 1 0`"
