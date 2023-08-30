@@ -1,11 +1,12 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{6..10} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{10..12} )
 
-inherit eutils git-r3 multilib cmake-utils distutils-r1
+inherit git-r3 cmake distutils-r1
 
 DESCRIPTION="Documenting the Xilinx 7-series bitstream format."
 HOMEPAGE="https://github.com/SymbiFlow/prjxray"
@@ -26,19 +27,19 @@ RDEPEND="
 "
 
 python_prepare_all() {
-	cmake-utils_src_prepare
+	cmake_src_prepare
 	distutils-r1_python_prepare_all
 }
 
 python_configure_all() {
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 python_compile_all() {
-	cmake-utils_src_compile
+	cmake_src_compile
 }
 
 python_install_all() {
-	cmake-utils_src_install
+	cmake_src_install
 	distutils-r1_python_install_all
 }
