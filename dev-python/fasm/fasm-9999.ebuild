@@ -3,8 +3,8 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6..10} )
-
+PYTHON_COMPAT=( python3_{10..12} )
+DISTUTILS_USE_PEP517=setuptools
 inherit git-r3 distutils-r1
 
 DESCRIPTION="FPGA Assembly (FASM) Parser and Generator"
@@ -21,7 +21,7 @@ DEPEND="
 	dev-java/antlr:4
 	dev-python/flake8
 	dev-python/pytest
-	dev-python/textx
+	dev-python/textX
 "
 RDEPEND="
 	${PYTHON_DEPS}
