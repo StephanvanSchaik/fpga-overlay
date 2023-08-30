@@ -1,9 +1,10 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit eutils git-r3 multilib
+PYTHON_COMPAT=( python3_{10..12} )
+inherit git-r3 python-any-r1
 
 DESCRIPTION="Project X-Ray Database: XC7 Series"
 HOMEPAGE="https://github.com/SymbiFlow/prjxray-db"
