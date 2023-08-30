@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+<email>stephan@synkhronix.com</email>
+<name>S.J.R. van Schaik</name>
+</maintainer>
+<use>
+	<flag name='abc'>Enable ABC support.</flag>
+	<flag name='clang'>Use Clang to compile yosys.</flag>
+	<flag name='plugins'>Enable support for plugins.</flag>
+</use>
+</pkgmetadata>
