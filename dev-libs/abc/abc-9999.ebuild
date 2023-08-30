@@ -26,3 +26,11 @@ src_compile() {
 		emake libabc.a
 	fi
 }
+
+src_install() {
+	dolib.so libabc.so
+
+	if use static ; then
+		dolib.a libabc.a
+	fi
+}
