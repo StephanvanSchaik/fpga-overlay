@@ -18,6 +18,7 @@ USE="abc"
 IUSE="+abc clang plugins +python readline tcl +zlib"
 
 RDEPEND="
+	abc? ( dev-libs/abc )
 	readline? ( sys-libs/readline )
 	python? ( ${PYTHON_DEPS} dev-libs/boost )
 	plugins? ( dev-libs/libffi virtual/pkgconfig )
