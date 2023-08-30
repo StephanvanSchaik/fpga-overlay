@@ -1,9 +1,11 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit multilib eutils git-r3
+PYTHON_COMPAT=( python3_{10..12} )
+
+inherit git-r3 python-r1
 
 DESCRIPTION="A framework for RTL synthesis"
 HOMEPAGE="http://www.clifford.at/yosys/"
@@ -12,13 +14,13 @@ EGIT_REPO_URI="https://github.com/SymbiFlow/yosys"
 
 SLOT="0"
 KEYWORDS=""
-IUSE="+abc plugins protobuf +python readline tcl +zlib"
+USE="abc"
+IUSE="+abc plugins +python readline tcl +zlib"
 
 RDEPEND="
 	readline? ( sys-libs/readline )
-	python? ( dev-lang/python dev-libs/boost )
-	plugins? ( virtual/libffi virtual/pkgconfig )
-	protobuf? ( dev-libs/protobuf )
+	python? ( ${PYTHON_DEPS} dev-libs/boost )
+	plugins? ( dev-libs/libffi virtual/pkgconfig )
 	tcl? ( dev-lang/tcl )
 	zlib? ( sys-libs/zlib )"
 
@@ -30,7 +32,7 @@ DEPEND="
 	virtual/pkgconfig
 	${RDEPEND}"
 
-RESTRICT="abc? ( network-sandbox )"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 src_configure() {
 	(
@@ -41,7 +43,6 @@ src_configure() {
 		echo "ENABLE_GLOB := 1"
 		echo "ENABLE_LIBYOSYS := 1"
 		echo "ENABLE_PYOSYS := `usex python 1 0`"
-		echo "ENABLE_PROTOBUF := `usex protobuf 1 0`"
 		echo "ENABLE_ZLIB := `usex zlib 1 0`"
 	) >Makefile.conf
 }
