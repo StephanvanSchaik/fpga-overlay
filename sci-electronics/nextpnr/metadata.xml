@@ -8,5 +8,7 @@
 <use>
 	<flag name='ecp5'>Enable support for the Lattice ECP5 family of FPGAs.</flag>
 	<flag name='ice40'>Enable support for the Lattice ICE40 family of FPGAs.</flag>
+	<flag name='gowin'>Enable support for the Gowin family of FPGAs.</flag>
+	<flag name='himbaechel'>Enable support for newer Gowin family of FPGAs.</flag>
 </use>
 </pkgmetadata>
