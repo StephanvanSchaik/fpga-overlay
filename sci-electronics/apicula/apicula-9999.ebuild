@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-python/crc"
 
 RDEPEND="
 	${PYTHON_DEPS}
