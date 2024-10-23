@@ -1,9 +1,9 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit eutils multilib cmake-utils
+inherit multilib cmake
 
 DESCRIPTION="Command Line Mercury (www.micro-nova.com) Programmer"
 HOMEPAGE="https://github.com/cr1901/mercpcl"
@@ -19,5 +19,5 @@ DEPEND="dev-embedded/libftdi
 		virtual/libusb"
 
 src_configure() {
-	cmake-utils_src_configure
+	cmake_src_configure
 }
