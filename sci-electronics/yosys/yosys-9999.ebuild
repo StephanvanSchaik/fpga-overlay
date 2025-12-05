@@ -14,7 +14,6 @@ EGIT_REPO_URI="https://github.com/YosysHQ/yosys"
 
 SLOT="0"
 KEYWORDS=""
-USE="abc"
 IUSE="+abc clang plugins +python readline tcl +zlib"
 
 RDEPEND="
