@@ -19,7 +19,7 @@ IUSE="+abc clang plugins +python readline tcl +zlib"
 RDEPEND="
 	abc? ( dev-libs/abc )
 	readline? ( sys-libs/readline )
-	python? ( ${PYTHON_DEPS} dev-libs/boost )
+	python? ( ${PYTHON_DEPS} dev-libs/boost dev-python/uv dev-python/cxxheaderparser )
 	plugins? ( dev-libs/libffi virtual/pkgconfig )
 	tcl? ( dev-lang/tcl )
 	zlib? ( sys-libs/zlib )"
@@ -37,6 +37,12 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 # PATCHES=(
 # 	"${FILESDIR}/${P}-makefile.patch"
 # )
+
+src_prepare() {
+	default
+
+	sed -e '/cp yosys-abc/d' -i Makefile
+}
 
 src_configure() {
 	if use clang ; then
