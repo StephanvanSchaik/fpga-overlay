@@ -12,7 +12,6 @@ DESCRIPTION="Project Apicula 🐝: bitstream documentation for Gowin FPGAs."
 HOMEPAGE="https://github.com/YosysHQ/apicula"
 EGIT_REPO_URI="https://github.com/YosysHQ/apicula"
 
-SRC_URI="https://github.com/YosysHQ/apicula/releases/download/0.0.0.dev/linux-x64-gowin-data.tgz"
 LICENSE="ISC"
 
 SLOT="0"
