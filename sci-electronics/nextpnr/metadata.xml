@@ -11,4 +11,7 @@
 	<flag name='gowin'>Enable support for the Gowin family of FPGAs.</flag>
 	<flag name='himbaechel'>Enable support for newer Gowin family of FPGAs.</flag>
 </use>
+<upstream>
+<remote-id type="github">YosysHQ/nextpnr</remote-id>
+</upstream>
 </pkgmetadata>

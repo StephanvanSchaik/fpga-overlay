@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 DISTUTILS_USE_PEP517=setuptools
 inherit git-r3 distutils-r1
 
@@ -28,7 +28,6 @@ RDEPEND="
 	${PYTHON_DEPS}
 	${DEPEND}
 "
-BDEPEND=""
 
 python_compile() {
 	distutils-r1_python_compile --antlr-runtime=shared

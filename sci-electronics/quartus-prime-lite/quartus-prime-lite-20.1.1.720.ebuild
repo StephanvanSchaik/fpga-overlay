@@ -15,14 +15,13 @@ KEYWORDS="~amd64"
 RDEPEND="media-libs/libpng
 		x11-libs/libXft
 		app-arch/bzip2
-		sys-libs/zlib
+		virtual/zlib
 		sys-libs/glibc
 		media-libs/freetype
 		sys-libs/ncurses"
 
-RESTRICT="fetch bindist"
-
 S=${WORKDIR}
+RESTRICT="fetch bindist"
 
 pkg_nofetch() {
 	elog "Due to licensing restrictions, and old libary versions."

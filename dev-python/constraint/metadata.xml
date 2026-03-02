@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+<email>stephan@synkhronix.com</email>
+<name>S.J.R. van Schaik</name>
+</maintainer>
+<stabilize-allarches/>
+<upstream>
+<remote-id type="github">python-constraint/python-constraint</remote-id>
+</upstream>
+</pkgmetadata>

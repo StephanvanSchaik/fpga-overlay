@@ -7,13 +7,12 @@ inherit git-r3 cmake
 
 DESCRIPTION="Documenting the Lattice ECP5 bit-stream format."
 HOMEPAGE="https://prjtrellis.readthedocs.io/en/latest/"
-LICENSE="ISC"
 EGIT_REPO_URI="https://github.com/YosysHQ/prjtrellis"
 S=$WORKDIR/prjtrellis-9999/libtrellis
+LICENSE="ISC"
 
 SLOT="0"
 KEYWORDS=""
-IUSE=""
 
 DEPEND="dev-libs/boost"
 

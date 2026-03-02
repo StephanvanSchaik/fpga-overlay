@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit multilib cmake
+inherit cmake
 
 DESCRIPTION="Command Line Mercury (www.micro-nova.com) Programmer"
 HOMEPAGE="https://github.com/cr1901/mercpcl"
@@ -13,7 +13,6 @@ inherit git-r3
 EGIT_REPO_URI="https://github.com/cr1901/mercpcl"
 
 SLOT="0"
-IUSE=""
 
 DEPEND="dev-embedded/libftdi
 		virtual/libusb"

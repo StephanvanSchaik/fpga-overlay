@@ -13,9 +13,7 @@ LICENSE="all-rights-reserved"
 SLOT="0"
 KEYWORDS=""
 
-DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 IUSE="+static"
 

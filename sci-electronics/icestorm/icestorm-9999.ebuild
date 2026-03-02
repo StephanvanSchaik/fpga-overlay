@@ -14,11 +14,6 @@ EGIT_REPO_URI="https://github.com/YosysHQ/icestorm"
 
 SLOT="0"
 KEYWORDS=""
-IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}"
-BDEPEND=""
 
 DEPEND=">=dev-lang/python-3
 		dev-embedded/libftdi

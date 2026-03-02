@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit git-r3 cmake distutils-r1
 
@@ -15,7 +15,6 @@ EGIT_REPO_URI="https://github.com/SymbiFlow/prjxray"
 
 SLOT="0"
 KEYWORDS=""
-IUSE=""
 
 DEPEND="
 	dev-cpp/abseil-cpp

@@ -16,7 +16,4 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
 
-RDEPEND=""
-BDEPEND=""
-
 # distutils_enable_tests pytest

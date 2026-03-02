@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..13} )
+PYTHON_COMPAT=( python3_{11..14} )
 DISTUTILS_USE_PEP517=standalone
 
 inherit git-r3 distutils-r1
@@ -17,12 +17,10 @@ SLOT="0"
 KEYWORDS=""
 REQUIRED_USE="${PYiTHON_REQUIRED_USE}"
 
-DEPEND=""
 RDEPEND="
 	${PYTHON_DEPS}
 	${DEPEND}
 "
-BDEPEND=""
 
 src_prepare() {
 	rm -rf examples

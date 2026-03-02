@@ -19,7 +19,6 @@ else
 fi
 
 SLOT="0"
-IUSE=""
 
 DEPEND="dev-embedded/libftdi
 		virtual/libudev"

@@ -16,11 +16,12 @@ IUSE="ice40 ecp5 gowin himbaechel qt5"
 
 DEPEND="ice40? ( sci-electronics/icestorm sci-electronics/yosys )
 		ecp5? ( sci-electronics/prjtrellis sci-electronics/yosys )
-		gowin? ( sci-electronics/apicula sci-electronics/yosys )
-		himbaechel? ( sci-electronics/apicula sci-electronics/yosys )
+		gowin? ( sci-electronics/apycula sci-electronics/yosys )
+		himbaechel? ( sci-electronics/apycula sci-electronics/yosys )
 		qt5? ( dev-qt/qtcore:5 )
 		dev-libs/boost
-		dev-cpp/eigen"
+		dev-cpp/eigen
+		dev-python/pybind11"
 
 src_configure() {
 	local mycmakeargs=(

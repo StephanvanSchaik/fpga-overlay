@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{11..14} )
 
 inherit distutils-r1 git-r3
 
@@ -17,9 +17,8 @@ SLOT="0"
 KEYWORDS=""
 
 RDEPEND="
-	dev-python/jinja
+	dev-python/jinja2
 	>=dev-python/pyvcd-0.2.2
 "
-BDEPEND=""
 
 distutils_enable_tests pytest

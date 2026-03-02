@@ -22,7 +22,7 @@ RDEPEND="
 	python? ( ${PYTHON_DEPS} dev-libs/boost dev-python/uv dev-python/cxxheaderparser )
 	plugins? ( dev-libs/libffi virtual/pkgconfig )
 	tcl? ( dev-lang/tcl )
-	zlib? ( sys-libs/zlib )
+	zlib? ( virtual/zlib )
 	media-gfx/xdot"
 
 DEPEND="

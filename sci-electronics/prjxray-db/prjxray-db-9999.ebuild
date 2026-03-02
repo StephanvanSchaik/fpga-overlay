@@ -13,7 +13,6 @@ EGIT_REPO_URI="https://github.com/SymbiFlow/prjxray-db"
 
 SLOT="0"
 KEYWORDS=""
-IUSE=""
 
 DEPEND="dev-lang/python"
 
