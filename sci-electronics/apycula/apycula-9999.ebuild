@@ -40,12 +40,6 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
-python_install() {
-	distutils-r1_python_install
-	python_moduleinto apycula
-	python_doins apycula/*.msgpack.xz
-}
-
 python_install_all() {
 	distutils-r1_python_install_all
 }
