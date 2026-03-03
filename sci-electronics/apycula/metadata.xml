@@ -6,6 +6,7 @@
 <name>S.J.R. van Schaik</name>
 </maintainer>
 <upstream>
+<remote-id type="pypi">apycula</remote-id>
 <remote-id type="github">YosysHQ/apicula</remote-id>
 </upstream>
 </pkgmetadata>
