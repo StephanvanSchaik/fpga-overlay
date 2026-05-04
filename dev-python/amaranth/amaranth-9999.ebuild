@@ -19,6 +19,7 @@ KEYWORDS=""
 RDEPEND="
 	dev-python/jinja2
 	>=dev-python/pyvcd-0.2.2
+	dev-python/amaranth-boards
 "
 
 distutils_enable_tests pytest
